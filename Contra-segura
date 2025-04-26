@@ -1,0 +1,18 @@
+# Contraseña predefinida
+contrasena_correcta = "Segura2025"
+intentos_maximos = 3
+intentos = 0
+
+while intentos < intentos_maximos:
+    ingreso = input("Introduce la contraseña: ")
+    
+    if ingreso == contrasena_correcta:
+        print("Acceso Permitido.")
+        break
+    else:
+        intentos += 1
+        if intentos < intentos_maximos:
+            print("Contraseña incorrecta. Inténtalo de nuevo.")
+
+if intentos == intentos_maximos:
+    print("Demasiados intentos fallidos. Acceso bloqueado.")
