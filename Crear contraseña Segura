@@ -1,0 +1,21 @@
+def es_contrasena_segura(contrasena):
+    # Verifica que tenga al menos 8 caracteres
+    if len(contrasena) < 8:
+        return False
+
+    # Verifica que tenga al menos una letra mayúscula
+    tiene_mayuscula = any(c.isupper() for c in contrasena)
+
+    # Verifica que tenga al menos un número
+    tiene_numero = any(c.isdigit() for c in contrasena)
+
+    return tiene_mayuscula and tiene_numero
+
+# Solicita al usuario una contraseña
+contrasena = input("Ingresa una contraseña: ")
+
+# Evalúa si es segura
+if es_contrasena_segura(contrasena):
+    print("La contraseña es segura.")
+else:
+    print("La contraseña no es segura.")
